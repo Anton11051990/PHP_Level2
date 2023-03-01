@@ -1,19 +1,15 @@
 {
-    "name": "george/php",
+    "require": {
+        "twig/twig": "^3.0",
+      "ext-json": "*",
+        "robmorgan/phinx": "^0.12.10"
+    },
     "autoload": {
         "psr-4": {
-            "George\\Php\\": "src/"
+            "app\\":""
         }
     },
-    "authors": [
-        {
-            "name": "Sergey Misharin",
-            "email": "misharin_sergey-work@mail.ru"
-        }
-    ],
-    "require": {
-      "ext-http": "*",
-      "ext-mbstring": "*",
-      "ext-pdo": "*"
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
     }
 }

@@ -1,0 +1,34 @@
+body {
+    background-image: url("../img/background.jpg");
+    background-repeat: repeat-y;
+    background-size: 100%;
+}
+
+.banner {
+    background: #a770ef;
+    background: -webkit-linear-gradient(to right, #a770ef, #cf8bf3, #fdb99b);
+    background: linear-gradient(to right, #a770ef, #cf8bf3, #fdb99b);
+}
+
+.nav-link {
+    font-size: 25px;
+    color: black;
+}
+
+.shop-title {
+    color: white;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+
+.product-card-link:hover{
+    text-decoration: none;
+}
+
+.calculator-forms {
+    color: white;
+}
