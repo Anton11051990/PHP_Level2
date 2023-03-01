@@ -1,0 +1,64 @@
+<div class="container-fluid">
+    <div class="px-lg-5">
+        <div class="row d-flex">
+            <div class="col-md-6 col-12">
+                <div class="col-md-12">
+                    <a href="/product/catalog" style="font-size: 2em; text-decoration: none;" class="">Назад</a>
+                        {% if product.id %}
+                            <form action="/adminProduct/update" method="post"  enctype="multipart/form-data">
+                            <div class="col-sm">
+                                <label for="Id" class="form-label">ID</label>
+                                <input type="text" class="form-control" name="id" placeholder="Id" aria-label="Id" readonly value="{{ product.id }}">
+                            </div>
+                                <br>
+                            <div class="col-sm">
+                                <img src="../../img/{{ product.image }}" style="width: 200px; height: 200px" alt="Product image">
+                            </div>
+                                <br>
+                                <div class="col-sm">
+                                    <label for="Picture" class="form-label">Новое фото продукта</label><br>
+                                    <input name="image" type="file" accept="image/*">
+                                </div>
+                                <br>
+                        {% else %}
+                                <form action="/adminProduct/add" method="post"  enctype="multipart/form-data">
+                                    <br>
+                            <div class="col-sm">
+                                <label for="Picture" class="form-label">Фото продукта</label><br>
+                                <input name="image" type="file" accept="image/*" required>
+                            </div>
+                                    <br>
+                        {% endif %}
+
+                        <div class="col-sm">
+                            <label for="Name" class="form-label">Название товара</label>
+                            <input type="text" class="form-control" name="name" placeholder="Name" aria-label="Name" value="{{  product.name }}" required>
+                        </div>
+                        <div class="col-sm">
+                            <label for="Description" class="form-label">Описание</label>
+                            <input type="text" class="form-control" name="description" placeholder="Description" aria-label="Description" value="{{ product.description }}" required>
+                        </div>
+                    <div class="col-sm">
+                        <label for="Price" class="form-label">Цена</label>
+                        <input type="number" class="form-control" name="price" placeholder="Price" aria-label="Price" value="{{ product.price }}" required>
+                    </div>
+
+                    <label class="form-label"></label>
+                    <div class="d-flex justify-content-center">
+                        <input type="submit"
+                           style="padding: 5px 5px;
+                               background-color: grey;
+                               margin: 0 1.5em 1em 1.5em;
+                               width: 100%;
+                               text-align: center;
+                               color: white;
+                               border: none; " class="rounded-pill"
+                        >
+                    </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

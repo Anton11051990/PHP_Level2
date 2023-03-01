@@ -1,0 +1,20 @@
+{% if isAuth %}
+    Добро пожаловать <?= $userName ?> <a href="/auth/logout">[Выход]</a>
+{% else %}
+    <form action="/auth/login" method="post">
+        <input type="text" name="login" placeholder="Логин" required>
+        <input type="text" name="pass" placeholder="Пароль" required>
+        <input type="submit" name="submit" value="Войти">
+    </form>
+{% endif %}
+
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+<a class="nav-item nav-link" href="/">Главная</a>
+<a class="nav-item nav-link" href="/product/catalog">Каталог</a>
+    {% if isAdmin %}
+            <a class="nav-item nav-link" href="/adminOrder/index">Заказы(admin)</a>
+        {% else %}
+            <a class="nav-item nav-link" href="/order/index">Заказы</a>
+    {% endif %}
+<a class="nav-item nav-link" href="/basket">Корзина(<span id="count">{{  count }}</span>)</a><br>
+</nav>

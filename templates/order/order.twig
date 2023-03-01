@@ -1,0 +1,26 @@
+<div class="container-fluid">
+    <div class="px-lg-5">
+        <!-- For demo purpose -->
+        <div class="row py-3">
+            <div class="col-lg-12 mx-auto">
+                <div class="text-white p-2 shadow-sm rounded banner text-center">
+                    <h1 class="display-6">Детали заказа</h1>
+                </div>
+            </div>
+        </div>
+        <!-- End -->
+        <div class="row d-flex">
+            <div class="col-md-6 col-12">
+                <div class="col-md-12">
+                    <a href="/adminOrder/index" style="font-size: 2em; text-decoration: none;" class="">Назад</a>
+                    <h4 class="mt-2">Заказ №{{ order.id }} от {{ order.created_at }}</h4>
+                    <p class="">{{ order.name }}, телефон: {{ order.phone }}, email {{ order.email }}, сумма {{ summ }} руб.</p>
+                    <hr>
+                    {% for item in basket %}
+                        <p>{{ item.name }}, {{  item.price }} руб.</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
